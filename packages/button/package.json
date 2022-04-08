@@ -1,7 +1,7 @@
 {
   "name": "@amazwind/button",
   "description": "A react button component built with tailwindcss",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Rohidul Islam <rohidul209@gmail.com>",
   "license": "MIT",
   "keywords": [
