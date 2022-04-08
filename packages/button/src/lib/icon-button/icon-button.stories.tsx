@@ -1,14 +1,10 @@
-import { Button } from './button';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import IconButton from './icon-button';
 import Icon from '../Icon';
 
 export default {
-  title: 'Buttons/Button',
-  component: Button,
-  argTypes: {
-    leftIcon: { control: 'boolean' },
-    rightIcon: { control: 'boolean' },
-  },
+  title: 'Buttons/Icon Button',
+  component: IconButton,
   decorators: [
     (Story) => (
       <>
@@ -31,18 +27,12 @@ export default {
       </>
     ),
   ],
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof IconButton>;
 
-const Template: ComponentStory<typeof Button> = ({
-  leftIcon,
-  rightIcon,
-  ...args
-}) => (
-  <Button
-    leftIcon={leftIcon ? <Icon /> : null}
-    rightIcon={rightIcon ? <Icon /> : null}
-    {...args}
-  />
+const Template: ComponentStory<typeof IconButton> = (args) => (
+  <IconButton {...args}>
+    <Icon className="w-4 h-4" />
+  </IconButton>
 );
 
 export const Solid = Template.bind({});
@@ -50,10 +40,6 @@ Solid.args = {
   variant: 'solid',
   size: 'medium',
   colorScheme: 'primary',
-  children: 'Button',
-  leftIcon: false,
-  rightIcon: false,
-  fullWidth: false,
   isActive: false,
   disabled: false,
 };
