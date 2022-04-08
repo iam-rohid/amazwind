@@ -1,0 +1,43 @@
+{
+  "root": "packages/gird",
+  "sourceRoot": "packages/gird/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/gird",
+        "tsConfig": "packages/gird/tsconfig.lib.json",
+        "project": "packages/gird/package.json",
+        "entryFile": "packages/gird/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/gird/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/gird/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/gird"],
+      "options": {
+        "jestConfig": "packages/gird/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

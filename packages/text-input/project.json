@@ -1,0 +1,43 @@
+{
+  "root": "packages/text-input",
+  "sourceRoot": "packages/text-input/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/text-input",
+        "tsConfig": "packages/text-input/tsconfig.lib.json",
+        "project": "packages/text-input/package.json",
+        "entryFile": "packages/text-input/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/text-input/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/text-input/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/text-input"],
+      "options": {
+        "jestConfig": "packages/text-input/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

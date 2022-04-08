@@ -1,0 +1,43 @@
+{
+  "root": "packages/number-input",
+  "sourceRoot": "packages/number-input/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/number-input",
+        "tsConfig": "packages/number-input/tsconfig.lib.json",
+        "project": "packages/number-input/package.json",
+        "entryFile": "packages/number-input/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/number-input/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/number-input/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/number-input"],
+      "options": {
+        "jestConfig": "packages/number-input/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

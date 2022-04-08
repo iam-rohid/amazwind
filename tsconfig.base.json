@@ -14,7 +14,19 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@amazwind/button": ["packages/button/src/index.ts"],
+      "@amazwind/checkbox": ["packages/checkbox/src/index.ts"],
+      "@amazwind/container": ["packages/container/src/index.ts"],
+      "@amazwind/flex-box": ["packages/flex-box/src/index.ts"],
+      "@amazwind/grid": ["packages/gird/src/index.ts"],
+      "@amazwind/number-input": ["packages/number-input/src/index.ts"],
+      "@amazwind/pin-input": ["packages/pin-input/src/index.ts"],
+      "@amazwind/radio": ["packages/radio/src/index.ts"],
+      "@amazwind/stack": ["packages/stack/src/index.ts"],
+      "@amazwind/text-field": ["packages/text-field/src/index.ts"],
+      "@amazwind/text-input": ["packages/text-input/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

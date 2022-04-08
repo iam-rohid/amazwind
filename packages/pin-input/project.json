@@ -1,0 +1,43 @@
+{
+  "root": "packages/pin-input",
+  "sourceRoot": "packages/pin-input/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/pin-input",
+        "tsConfig": "packages/pin-input/tsconfig.lib.json",
+        "project": "packages/pin-input/package.json",
+        "entryFile": "packages/pin-input/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/pin-input/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/pin-input/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/pin-input"],
+      "options": {
+        "jestConfig": "packages/pin-input/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

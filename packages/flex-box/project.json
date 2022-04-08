@@ -1,0 +1,43 @@
+{
+  "root": "packages/flex-box",
+  "sourceRoot": "packages/flex-box/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/flex-box",
+        "tsConfig": "packages/flex-box/tsconfig.lib.json",
+        "project": "packages/flex-box/package.json",
+        "entryFile": "packages/flex-box/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/flex-box/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/flex-box/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/flex-box"],
+      "options": {
+        "jestConfig": "packages/flex-box/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
